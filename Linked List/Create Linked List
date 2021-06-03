@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+struct Node{
+    int data;
+    Node* link;
+};
+int main() {
+    Node* head;
+    head=NULL;
+    Node* temp =new Node();
+    temp->data=1;
+    temp->link=NULL;
+    head=temp;
+    Node* temp1=new Node();
+    temp1->data=2;
+    temp1->link=NULL;
+    temp->link=temp1;
+    Node* temp2=new Node();
+    temp2->data=3;
+    temp2->link=NULL;
+    temp1->link=temp2;
+    if(head==NULL)
+    cout<<"Empty List";
+    Node* ptr=NULL;
+    ptr=head;
+    while(ptr!=NULL){
+        cout<<ptr->data<<" ";
+        ptr=ptr->link;
+    }
+    return 0;
+    }
+
+

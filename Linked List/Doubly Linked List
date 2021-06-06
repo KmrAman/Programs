@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+struct Node{
+    int data;
+    Node* next;
+    Node* prev;
+}; 
+struct Node* head;
+
+void print();
+void reverse();
+void print(){
+    Node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+}
+void insertAtFront(int x){
+    Node* temp=new Node();
+    temp->data=x;
+    temp->prev=NULL;
+    temp->next=head;
+    head =temp;
+    }
+void insertAtEnd(int x){
+    Node* temp=new Node();
+    temp->data=x;
+    temp->prev=NULL;
+    temp->next=NULL;
+    if(head==NULL){
+        head=temp;
+    }
+    else{
+        Node* p;
+        p=head;
+        while(p->next!=NULL){
+            p=p->next;
+        }
+        p->next=temp;
+        temp->prev=p;
+    }
+}
+int main() {
+    insertAtFront(4);
+    insertAtFront(3);
+    insertAtFront(2);
+    insertAtFront(1);
+     print();
+     insertAtEnd(4);
+     insertAtEnd(3);
+     insertAtEnd(2);
+     insertAtEnd(1);
+     print();
+    return 0;
+    }

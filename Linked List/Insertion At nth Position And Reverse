@@ -40,6 +40,18 @@ void print(){
     }
     cout<<endl;
 }
-
+//Reverse linked list Function
+void reverse(){
+    Node* current,*next;
+    Node *prev=NULL;
+    current=head;
+    while(current!=NULL){
+        next=current->link;
+        current->link=prev;
+        prev=current;
+        current=next;
+    }
+    head=prev;
+}
 
 

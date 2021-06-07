@@ -77,6 +77,20 @@ void insertAtFront(int x){
         free(temp1);
     }
 }
+//Reverse Function//
+void reverse(){
+    Node* temp=head;
+    Node* temp1=temp->next;
+    temp->next=NULL;
+    temp->prev=temp1;
+    while(temp1!=NULL){
+        temp1->prev=temp1->next;
+        temp1->next=temp;
+        temp=temp1;
+        temp1=temp1->prev;
+    }
+    head=temp;
+}
 
 int main() {
     insertAtFront(7);

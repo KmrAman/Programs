@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+int A[101];
+int top=-1;
+//Array Implementation//
+void push(int x){
+    if(top==100){
+        cout<<"ERROR:Stack Overflow"<<endl;
+        return;
+    }
+    A[++top]=x;
+}
+void pop(){
+    if(top==-1){
+        cout<<"ERROR:Stack Overflow"<<endl;
+        return;
+    }
+    top--;
+}
+int Top(){
+    return A[top];
+}
+void print(){
+    cout<<"Stack: ";
+    for(int i=0;i<=top;i++){
+        cout<<A[i]<<" ";
+    }
+    cout<<endl;
+}
+int main() {
+    push(2);
+    print();
+    push(3);
+    print();
+    push(4);
+    print();
+    pop();
+    print();
+}

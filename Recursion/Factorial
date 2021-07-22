@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int Factorial(int n){
+    int f;
+    if(n==0){
+        return 1;
+    }
+    f=n*Factorial(n-1);
+    return f;
+}
+int main() {
+    int n;
+    cin>>n;
+    int result;
+    result=Factorial(n);
+    cout<<result;
+
+}
